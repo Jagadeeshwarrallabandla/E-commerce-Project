@@ -1,56 +1,4 @@
-// import React, { createContext, useState } from 'react';
-
-
-// export const CartContext = createContext();
-
-// export const CartProvider = ({ children }) => {
-//   const [cartItems, setCartItems] = useState([]);
-
-//   const addToCart = (product) => {
-//     setCartItems((prevItems) => {
-//       const existingItem = prevItems.find(item => item.id === product.id);
-//       if (existingItem) {
-//         // Update quantity if product exists
-//         return prevItems.map(item =>
-//           item.id === product.id
-//             ? { ...item, quantity: item.quantity + 1 }
-//             : item
-//         );
-//       }
-//       // Add new product with quantity 1 if not exists
-//       return [...prevItems, { ...product, quantity: 1 }];
-//     });
-//   };
-
-//   const incrementQuantity = (id) => {
-//     setCartItems((prevItems) =>
-//       prevItems.map(item =>
-//         item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-//       )
-//     );
-//   };
-
-//   const decrementQuantity = (id) => {
-//     setCartItems((prevItems) =>
-//       prevItems.map(item =>
-//         item.id === id
-//           ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
-//           : item
-//       )
-//     );
-//   };
-
-//   const getCartCount = () => cartItems.reduce((acc, item) => acc + item.quantity, 0);
-
-//   return (
-//     <CartContext.Provider value={{ cartItems, addToCart, incrementQuantity, decrementQuantity, getCartCount }}>
-      
-//       {children}
-//     </CartContext.Provider>
-//   );
-// };
 import React, { createContext, useState } from 'react';
-
 import Notification from '../Message/Notification'; 
 
 export const CartContext = createContext();
@@ -92,6 +40,18 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const removeFromCart = (id) => {
+    setCartItems((prevItems) => {
+      const index = prevItems.findIndex(item => item.id === id);
+      if (index !== -1) {
+        const newItems = [...prevItems];
+        newItems.splice(index, 1);
+        return newItems;
+      }
+      return prevItems;
+    });
+  };
+
   const getCartCount = () => cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const handleCloseNotification = () => {
@@ -99,12 +59,9 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, incrementQuantity, decrementQuantity, getCartCount }}>
-      
+    <CartContext.Provider value={{ cartItems, addToCart, incrementQuantity, decrementQuantity, removeFromCart, getCartCount }}>
       <Notification message={notification.message} visible={notification.visible} onClose={handleCloseNotification} />
       {children}
     </CartContext.Provider>
   );
 };
-
-
