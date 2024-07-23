@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .Discount-Styling {
+    background-color: aliceblue;
+    padding: 50px 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .Card-Style {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  
+  .box {
+    /* flex: 0 1 calc(33.333% - 10px); */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 10px;
+    width: 275px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+  
+  .discount-heart {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .off {
+    background-color: darkblue;
+    color: white;
+    padding: 2px 5px;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+  
+  .heart-icon {
+    color: #e74c3c;
+    cursor: pointer;
+  }
+  
+  .image-styling {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  h6 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .rating {
+    font-size: 16px;
+    color: gold;
+    margin-bottom: 10px;
+  }
+  
+  .price-plus {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .plus {
+    font-size: x-large;
+    border-radius: 50%;
+    padding: 5px 7px;
+    border: 1px solid silver;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .plus:hover {
+    background-color: darkblue;
+    color: whitesmoke;
+  }
+  
+  .price-plus h3 {
+    font-size: 24px;
+  }
+  
