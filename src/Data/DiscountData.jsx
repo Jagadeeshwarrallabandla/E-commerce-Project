@@ -1,9 +1,9 @@
 import productImg01 from '../Images/double-sofa-01.png'
-import productImg02 from '../Images/double-sofa-01.png'
-import productImg08 from '../Images/double-sofa-01.png'
-import productImg09 from '../Images/double-sofa-01.png'
-import phone03 from '../Images/double-sofa-01.png'
-import phone04 from '../Images/double-sofa-01.png'
+import productImg02 from '../Images/double-sofa-02.png'
+import productImg08 from '../Images/arm-chair-01.jpg'
+import productImg09 from '../Images/arm-chair-03.jpg'
+import phone03 from '../Images/phone-03.png'
+import phone04 from '../Images/phone-04.jpg'
 export const discoutProducts = [
     {
       id: "01",

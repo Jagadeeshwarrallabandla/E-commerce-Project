@@ -1,14 +1,20 @@
-
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Shop.css';
 import { products } from '../Data/ProductsData.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { CartContext } from '../AddProduct/AddtoCart.jsx'; 
+import Footer from '../BannerPages/Footer.jsx';
 
 const Shop = () => {
+  const { addToCart } = useContext(CartContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -66,15 +72,15 @@ const Shop = () => {
               <p className='rating'>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
               <div className='price-plus'>
                 <h3>₹{product.price}</h3>
-                <FontAwesomeIcon icon={faPlus} className='plus' />
+                <FontAwesomeIcon icon={faPlus} className='plus' onClick={() => handleAddToCart(product)}/>
               </div>
             </div>
           ))
         )}
       </div>
+      <Footer />
     </div>
   );
 };
 
 export default Shop;
-

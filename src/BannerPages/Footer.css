@@ -1,0 +1,63 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.Footer-Styling{
+    display: flex;
+    justify-content: space-evenly;
+}
+.Footer{
+    background-color: darkblue;
+    padding: 20px 0px;
+}
+.icon-content li{
+    color: whitesmoke;
+    list-style: none;
+    font-size: medium;
+}
+.icon-content h6{
+    color: whitesmoke;
+    padding: 10px;
+    
+}
+.icon-mart-design{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.icon{
+    font-size: small;
+    padding-top: 5px;
+   
+}
+.About li{
+    color: whitesmoke;
+    list-style: none;
+    font-size: medium;
+    align-items: center;
+}
+.About h6{
+    color: whitesmoke;
+    padding: 10px;
+    
+}
+.customer li{
+    color: whitesmoke;
+    list-style: none;
+    font-size: medium;
+    align-items: center;   
+}
+.customer h6{
+    color: whitesmoke;
+    padding: 10px;
+}
+.contact-us{
+    color: whitesmoke;
+    list-style: none;
+    font-size: medium;
+    align-items: center;    
+}
+.contact-us{
+    color: whitesmoke;
+    padding: 10px;  
+}

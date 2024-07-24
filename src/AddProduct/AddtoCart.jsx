@@ -17,9 +17,10 @@ export const CartProvider = ({ children }) => {
             : item
         );
       }
-      setNotification({ message: 'The Product is added Successfully to Cart', visible: true });
       return [...prevItems, { ...product, quantity: 1 }];
     });
+
+    setNotification({ message: 'The Product is added Successfully to Cart', visible: true });
   };
 
   const incrementQuantity = (id) => {
